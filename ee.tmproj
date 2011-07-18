@@ -5,8 +5,6 @@
 	<key>documents</key>
 	<array>
 		<dict>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>ee</string>
 			<key>regexFolderFilter</key>
@@ -22,20 +20,8 @@
 	<key>metaData</key>
 	<dict/>
 	<key>showFileHierarchyDrawer</key>
-	<false/>
-	<key>showFileHierarchyPanel</key>
 	<true/>
-	<key>treeState</key>
-	<dict>
-		<key>ee</key>
-		<dict>
-			<key>isExpanded</key>
-			<true/>
-			<key>subItems</key>
-			<dict/>
-		</dict>
-	</dict>
 	<key>windowFrame</key>
-	<string>{{203, 4}, {1227, 874}}</string>
+	<string>{{320, 197}, {640, 388}}</string>
 </dict>
 </plist>

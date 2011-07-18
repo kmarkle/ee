@@ -9,6 +9,7 @@ public/stylesheets
 solr/data
 sunspot-solr.pid
 tmp/*
+*.tmproj
 .yardoc
 data/*txt
 .DS_Store
