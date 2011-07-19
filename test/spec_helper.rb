@@ -13,5 +13,4 @@ Dir[Rails.root.join("spec/factories/*.rb")].each {|f| require f}
 RSpec.configure do |config|
   config.mock_with :rspec
   config.include Devise::TestHelpers, :type => :controller
-  config.use_transactional_fixtures = true
 end
