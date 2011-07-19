@@ -17,5 +17,9 @@ class User
   has_many :foods
   has_many :moods
   has_many :conversations
+  
+  def next_learning
+    
+  end
 
 end
