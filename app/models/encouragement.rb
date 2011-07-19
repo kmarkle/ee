@@ -1,3 +1,9 @@
 class Encouragement
+  include Mongoid::Document
+  include Mongoid::Timestamps::Created
   
-end 
+  field :encouragement
+  
+  has_many :EncouragementTraitScores
+
+end
