@@ -1,0 +1,3 @@
+class Encouragement
+  
+end 
