@@ -7,12 +7,12 @@ class User
   field :password
   
   
-  has_many :AssessmentAnswers
-  has_many :TraitScores
-  has_many :EmotionScores
-  has_many :Practices
-  has_many :Foods
-  has_many :Moods
-  has_many :Conversations
+  has_many :assessment_answers
+  has_many :trait_scores
+  has_many :emotion_scores
+  has_many :practices
+  has_many :foods
+  has_many :moods
+  has_many :conversations
   
 end

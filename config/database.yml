@@ -1,0 +1,13 @@
+development:
+  adapter: mongodb
+  database: ee-development
+  host: localhost
+
+
+test:
+  adapter: mongodb
+  database: ee-test
+  host: localhost
+
+production:
+  adapter: mongodb
