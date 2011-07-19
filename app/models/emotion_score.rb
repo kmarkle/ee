@@ -1,7 +1,7 @@
 class EmotionScore
   include Mongoid::Document
   
-  field :score, :type => Integer
+  field :emotionscore, :type => Integer
   
   belongs_to :user
   belongs_to :emotion
