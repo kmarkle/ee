@@ -1,5 +1,10 @@
-- semantic_form_for @user do |u|
-  - @user.assessment_answers.each |aa| do
-    - u.semantic_fields_for aa do |answer|
-      = answer.input :assessmentanswer, :label => answer.assessment_question.assessmentquestion + " (Please enter 0 - 7)"
+%p
+  Initial Assessment Form
+- semantic_form_for :assessment_answer, :url => user_assessment_path(current_user) do |f|
+  - @assessment_answers.each do |aa|
+    - f.inputs :name => "Assessment Answer" do
+      = f.input :user, :value => current_user, :as => :hidden, :name => "assessment_answer[][user]"
+      = f.input :assessmentanswer, :label => aa.assessment_question.assessmentquestion + " (Please enter 0 - 7)", :name => "assessment_answer[][assessmentanswer]"
+      = f.input :assessment_question, :value => aa.assessment_question, :as => :hidden, :name => "assessment_answer[][assessment_question]"
+  = f.submit
       

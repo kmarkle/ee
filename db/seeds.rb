@@ -6,6 +6,8 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
+Assessment.all.each {|a| a.delete}
+AssessmentQuestion.all.each {|aq| aq.delete}
 
 a = Assessment.create(:assessment => "Initial Assessment")
 aqs = []

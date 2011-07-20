@@ -10,12 +10,25 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     if @user.assessment_answers.count == 0
+      @assessment_answers = []
       Assessment.initial_assessment.assessment_questions.each do |aq| 
         aa = AssessmentAnswer.new
         aa.assessment_question = aq
-        @user.assessment_answers << aa
+        @assessment_answers << aa
       end
       render "initial_assessment"
+    end
+  end
+  
+  #post assessment answers
+  def assessment
+    aas = []
+    params[:assessment_answer].each do |aa|
+      aas << AssessmentAnswers.create(aa)
+    end
+    current_user.assessment_answers = aas
+    if current_user.save!
+      redirect_to user_path(current_user)
     end
   end
   
