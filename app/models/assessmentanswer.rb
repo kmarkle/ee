@@ -3,7 +3,7 @@ class AssessmentAnswer
     
   field :assessmentanswer, :type => Integer
   
-  belongs_to :AssessmentQuestion
-  belongs_to :User
+  belongs_to :assessment_question
+  belongs_to :user
   
 end

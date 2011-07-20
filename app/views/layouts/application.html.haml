@@ -6,4 +6,12 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
+    %div
+      - if user_signed_in?
+        = "Welcome: " + current_user.email
+        = link_to("Logout", destroy_user_session_path, :method => :delete)
+      - else
+        = link_to("Log in Here", new_user_session_path)
+        |
+        = link_to("Sign Up Here", new_user_registration_path)
     = yield

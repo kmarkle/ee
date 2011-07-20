@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:new, :create]
+  before_filter :authenticate_user!
   
   #list of users
   def index
@@ -8,26 +8,26 @@ class UsersController < ApplicationController
   
   #returns a specific user
   def show
-    @user = User.find(params[:id])
+    @user = current_user
+    if @user.assessment_answers.count == 0
+      Assessment.initial_assessment.assessment_questions.each do |aq| 
+        aa = AssessmentAnswer.new
+        aa.assessment_question = aq
+        @user.assessment_answers << aa
+      end
+      render "initial_assessment"
+    end
   end
   
   #returns the form to edit a user
   def edit
-    @user = User.new
+    @user = User.find(params[:id])
+    
+    @assessment = Assessment.initial_assessment
   end
   
   #updates a specific user object
   def update
-    
-  end
-  
-  #displays the new form
-  def new
-    
-  end
-  
-  #post of the new form
-  def create
     
   end
   

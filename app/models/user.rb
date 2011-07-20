@@ -18,6 +18,10 @@ class User
   has_many :moods
   has_many :conversations
   
+  validates_uniqueness_of :email, :case_sensitive => false, :message => 'has already been taken'
+  
+  accepts_nested_attributes_for :assessment_answers
+  
   def next_learning
     
   end

@@ -4,6 +4,9 @@ class Assessment
   field :assessment
   field :scoringalgorithm
   
-  has_many :AssessmentQuestions
+  has_many :assessment_questions
   
+  def self.initial_assessment
+    return Assessment.where(:assessment => 'Initial Assessment').first
+  end
 end

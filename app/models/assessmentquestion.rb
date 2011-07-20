@@ -4,7 +4,7 @@ class AssessmentQuestion
   field :assessmentquestion
   field :scoringweight, :type => Integer
   
-  belongs_to :Assessment
-  has_many :AssessmentAnswers
+  belongs_to :assessment
+  has_many :assessment_answers
   
 end

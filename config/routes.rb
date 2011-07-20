@@ -1,6 +1,8 @@
 Ee::Application.routes.draw do
   devise_for :users
 
+  resources :users, :except => [:new, :create]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

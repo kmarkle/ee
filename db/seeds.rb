@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+
+a = Assessment.create(:assessment => "Initial Assessment")
+aqs = []
+aqs << AssessmentQuestion.create(:assessmentquestion => "I crave excitement", :scoringweight => 1, :assessment => a)
+aqs << AssessmentQuestion.create(:assessmentquestion => "I worry about making mistakes", :scoringweight => 2, :assessment => a)
+aqs << AssessmentQuestion.create(:assessmentquestion => "Criticism hurts me", :scoringweight => 3, :assessment => a)  
+a.assessment_questions = aqs
+a.save!

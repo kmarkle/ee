@@ -1,0 +1,5 @@
+- semantic_form_for @user do |u|
+  - @user.assessment_answers.each |aa| do
+    - u.semantic_fields_for aa do |answer|
+      = answer.input :assessmentanswer, :label => answer.assessment_question.assessmentquestion + " (Please enter 0 - 7)"
+      
