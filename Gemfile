@@ -9,6 +9,8 @@ gem 'mongo'
 gem 'mongo_ext'
 gem 'bson_ext'
 gem 'formtastic'
+gem 'hpricot'
+gem 'ruby_parser'
 
 
 

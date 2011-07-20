@@ -1,4 +1,5 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
+  before_filter :authenticate_user!, :except => [:new, :create]
   
   #list of users
   def index
